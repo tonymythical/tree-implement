@@ -23,10 +23,16 @@ public class Traversal {
     stringRoot.right.right = new TreeNode<>("f");
     stringRoot.right.right.right = new TreeNode<>("j");
 
-    preorder(stringRoot);
+    // preorder(stringRoot);
     // inorder(root);
-    postorder(root);
-    printGreaterThan(root, 1);
+    // postorder(root);
+    // printGreaterThan(root, 1);
+    System.out.println(countNodes(root));
+    
+  }
+
+  public static int countNodes(TreeNode<?> current) {
+    return current == null ? 0 : 1 + countNodes(current.left) + countNodes(current.right);
   }
 
   // Do a preorder traversal
